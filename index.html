@@ -11,21 +11,21 @@
   <body>
     <div class="svgb">
       <header>
-        <nav>
+        <nav class="nav">
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </nav>
+        <button class="menu-button" id="menu-btn" onclick="myFunction()">
+          <div class="menu-icon"></div>
+        </button>
         <h2>Landing</h2>
-        <!-- <button class="menu-button">
-                <div class="menu-icon"></div>
-            </button> -->
         <button class="btn-buy-now">Buy now</button>
       </header>
 
-      <main>
+      <main class="main">
         <article class="hero">
           <h2>Introduce Your Product Quickly & Effectively</h2>
           <p class="textbody">
@@ -43,30 +43,22 @@
         <div><img src="img/hero.png" alt="" /></div>
       </main>
     </div>
+
+    <script>
+      function myFunction() {
+        var btnMenuIcon = document.getElementsByClassName("menu-icon")[0];
+        if (btnMenuIcon) {
+          var navEl = document.getElementsByClassName("nav")[0];
+          var mainEl = document.getElementsByClassName("main")[0];
+            navEl.classList.toggle("opened");
+          if (btnMenuIcon.classList.toggle("opened")) {
+            // navEl.style.display = "flex";
+            mainEl.style.filter = "blur(3px)";
+          } else {
+            mainEl.style.filter = "none";
+          }
+        }
+      }
+    </script>
   </body>
 </html>
-<!-- <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href=""></a>Home</li>
-                <li><a href=""></a>About</li>
-                <li><a href=""></a>Contact</li>
-            </ul>
-        </nav>
-        <section class="header-title">
-            <h1>Landing</h1>
-            <button class="menu-btn">
-                <div class="menu-icon"></div>
-            </button>
-        </section>
-    </header>
-</body>
-</html> -->
