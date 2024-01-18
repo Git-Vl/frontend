@@ -22,6 +22,8 @@
     flex-flow: column nowrap;
   }
 
+  /* HEADER */
+
   header {
     display: flex;
     flex-flow: row;
@@ -44,14 +46,11 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     min-width: 300px;
-
-    /* flex-flow: column nowrap; */
   }
 
   nav li {
     color: var(--Colour-Main-Blue-500, #505f98);
     font-feature-settings: "clig" off, "liga" off;
-    /* Regular 14 */
     font-size: 1.4rem;
     font-style: normal;
     font-weight: 00;
@@ -70,38 +69,29 @@
     text-decoration: none;
   }
 
-  /* .container {
-  flex: 1 1 calc(33.333%-1rem);
-  overflow: hidden; //не выходит за рамки //scroll
-
-}*/
-  header h1 {
+  header h2 {
     color: var(--Colour-Logo-Primary, #37447e);
     font-feature-settings: "clig" off, "liga" off;
-
-    /* Bold 26 */
-    font-size: 26px;
+    font-size: 2.2rem;
     font-weight: 900;
-    line-height: 38px; /* 146.154% */
+    line-height: 38px;
   }
+
   header .btn-buy-now {
     width: 17rem;
     height: 2.5rem;
     flex-shrink: 0;
     border-radius: 2px;
     background: var(--Colour-Main-Blue-800, #111b47);
-
     color: var(--colour-secondary-white-100-general, #fff);
     text-align: center;
-    /* Medium 12 */
     font-size: 1rem;
     font-weight: 400;
-    line-height: 18px; /* 150% */
+    line-height: 18px;
   }
 
+  /* MAIN */
   main {
-    /* margin-top: -50px; */
-    /* flex-shrink: 0; */
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -117,7 +107,6 @@
 } */
   img {
     height: auto;
-    /* padding-top: 150px; */
   }
 
   div:has(> img) {
@@ -128,29 +117,30 @@
   main div {
     display: flex;
   }
-  main svg {
-  }
 
   .hero {
-    max-width: 850px;
-    /* padding-left: 200px; */
+    max-width: 50%; 
+    /* font-size: clamp(1rem, 0.3043rem + 3.4783vw, 3rem)!important; */
   }
   .hero h2 {
     color: var(--Colour-Main-Blue-900, #091133);
-    /* Medium 50 */
-    font-size: 60px;
+    /* font-size: 60px; */
+    font-size: 3rem;
+    /* font-size: clamp(1rem, -1.5rem + 8vw, 3rem)!important; */
     font-weight: 500;
-    line-height: 66px; /* 132% */
+    /* line-height: 66px; */
     letter-spacing: 1px;
   }
 
   .hero p {
     color: var(--Colour-Main-Blue-500, #505f98);
-    /* Regular 18 */
     font-size: 25px;
+    /* font-size: clamp(1rem, 0.3043rem + 3.4783vwvw, 3rem)!important; */
     font-weight: 400;
-    line-height: 30px; /* 166.667% */
+    /* line-height: 30px; */
     margin: 50px 0;
+    min-height: 5rem;
+    
   }
   .btn-container {
     display: flex;
@@ -160,38 +150,35 @@
   .btn-purchase {
     color: var(--colour-secondary-white-100-general, #fff);
     background: var(--Colour-Main-Blue-800, #111b47);
-    /* Medium 16 */
     font-size: 16px;
     font-weight: 500;
-    line-height: 26px; /* 162.5% */
+    line-height: 26px;
 
     text-align: center;
     border-radius: 2px;
-    width: 30%;
+    width: 40%;
     height: 36px;
     flex-shrink: 0;
   }
   .btn-learn {
     border-radius: 2px;
     border: 2px solid var(--Colour-Main-Blue-900, #091133);
-    width: 30%;
+    width: 40%;
     height: 36px;
     flex-shrink: 0;
     color: var(--Colour-Main-Blue-900, #091133);
     background: var(--colour-secondary-white-100-general, #fff);
     text-align: center;
     font-feature-settings: "clig" off, "liga" off;
-    /* Medium 16 */
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 26px; /* 162.5% */
+    line-height: 26px;
     height: 36px;
     flex-shrink: 0;
     margin-left: 60px;
   }
-  /* dlvhfihbsidjcvilufdnv;dsijvnifdv */
 
   .menu-button {
     background-color: transparent;
@@ -201,7 +188,6 @@
     display: none;
     justify-content: center;
     align-items: center;
-    position: relative;
   }
 
   .menu-icon,
@@ -212,7 +198,7 @@
     height: 5px;
     border-radius: 5px;
     position: absolute;
-    /* transition: all 0.5s; */
+    transition: all 0.5s;
   }
 
   .menu-icon::before,
@@ -228,15 +214,94 @@
     transform: translate(-20px, 12px);
   }
 }
-@media screen and (max-width: 1450px) {
+
+@media screen and (max-width: 1440px) {
+
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    
+  }
+
+  div:has(> img) {
+    padding-top: 5rem;
+    width: 50%;
+  }
+  article {
+    width: 50%;
+  }
+  img {
+    max-width: 100%;
+  }
+
+}
+@media screen and (max-width: 1024px) {
+  
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    
+  }
+  div:has(> img) {
+    padding-top: 5rem;
+    width: 40%;
+  }
+  article {
+    width: 60%;
+
+  }
+  img {
+    max-width: 100%;
+  }
+
+  header {
+    gap: 0.5rem;
+    height: 5rem;
+    padding-inline: var(--padding-small);
+  }
+  nav ul {
+    min-width: 180px;
+  }
+
+  nav li {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  header h2 {
+    font-size: 1.4rem!important;
+  }
+
+  header .btn-buy-now {
+    width: 10rem;
+    height: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 18px;
+  }
+  main {
+    padding-inline: var(--padding-small);
+    padding-right: 0rem;
+  }
+
+}
+@media screen and (max-width: 768px) {
   header {
     flex-direction: row-reverse;
     justify-content: space-between !important;
     background-color: white;
     z-index: 999 !important;
     width: 100%;
-    padding-right: var(--padding-small);
-    /* padding left 1 rem ADDD */
+    padding-inline: var(--padding-small);
+  }
+  main {
+    padding-inline: var(--padding-small);
   }
   nav {
     display: none;
@@ -246,14 +311,31 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    top: 3.5rem;
+    top: 4rem;
     z-index: 1;
     background-color: white;
+    left: 0;
+    right: 0;
+    opacity: 0;
   }
   nav.opened {
     display: flex;
+    /* sanimation: example 0.5s ease-out; */
+    opacity: 1;
+    /* opacity: 1; */
   }
 
+  @keyframes example {
+    0% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  header:has(> nav.opened) {
+    /* padding: 0; */
+  }
   nav ul {
     flex-direction: column;
     text-align: center;
@@ -272,7 +354,7 @@
   }
   .opened.menu-icon {
     background-color: transparent;
-    transform: rotate(720deg);
+    transform: rotate(180deg);
   }
   .opened.menu-icon::before {
     transform: translateX(-20px) rotate(45deg);
@@ -280,32 +362,51 @@
   .opened.menu-icon::after {
     transform: translateX(-20px) rotate(-45deg);
   }
-  img {
-    width: 75%;
-    min-width: 300px;
+  div:has(> img) {
+    justify-content: right;
+    padding-top: 20px;
+  }
+  main {
+    padding-right: 0;
+  }
+
+  .btn-container {
+  }
+  .btn-purchase {
+    width: 49% !important;
+    font-size: 0.8rem;
+  }
+  .btn-learn {
+    margin-left: 0.2rem;
+    width: 49% !important;
+    font-size: 0.8rem;
+  }
+   img { 
+    min-width: 250px;
   }
   div header h2 {
     font-size: 1.5rem !important;
   }
   div h2 {
-    font-size: 3rem !important;
+    font-size: 1.7rem !important;
   }
-  p {
-    font-size: 1.5rem !important;
+  .hero p {
+    font-size: 0.9rem !important;
+    margin: 20px 0;
   }
-  div:has(> img) {
-    justify-content: right;
-    padding-top: 20px;
+  .hero {
+    max-width: 50%;
   }
 }
-@media screen and (max-width: 750px) {
+/* 425 */
+@media screen and (max-width: 550px) {
   header {
-    padding-inline: var(--padding-big);
+    padding-inline: var(--padding-small);
     padding-right: var(--padding-small);
+    height: 4rem;
   }
   .main {
     flex-direction: column;
-    /* justify-content: right !important; */
     align-items: center;
     padding-inline: var(--padding-small);
   }
@@ -321,14 +422,18 @@
     min-width: 300px;
   }
   article h2 {
-    font-size: 3.5rem !important;
-    line-height: 5rem !important;
+    font-size: 2.2rem !important;
+    line-height: 2.2rem !important;
+  }
+
+  .hero {
+    max-width: none;
   }
 
   .hero p {
-    font-size: 1.3rem !important;
-    line-height: 1.3rem !important;
-    margin: 20px 0;
+    font-size: 1rem !important;
+    line-height: 1.1rem !important;
+    margin: 10px 0;
   }
   .btn-container {
     width: 100%;
